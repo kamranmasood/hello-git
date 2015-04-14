@@ -8,10 +8,8 @@
  * Controller of the webAppApp
  */
 angular.module('webAppApp')
-  .controller('MainCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('MainCtrl', function ($scope, users) {
+
+$scope.students = users.students;
+
   });
