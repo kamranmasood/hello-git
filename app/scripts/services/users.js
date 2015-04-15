@@ -8,27 +8,21 @@
  * Service in the webAppApp.
  */
 angular.module('webAppApp')
-  .service('users', function () {
-    // AngularJS will instantiate a singleton by calling "new" on this functios
+  .service('users', function ($http) {
+    // AngularJS will instantiate a singleton by calling "new" on this functions
 
     return {
-      students: [
-        {
-          name:"Kamran Masood",
-          age:"29",
-          behavior:"shy"
-        },
-        {
-          name:"Furqan",
-          age:"29",
-          behavior:"shy"
-        },
-        {
-          name:"Farhan",
-          age:"29",
-          behavior:"shy"
-        }
-      ]
+      getUsers: function(callback){
+        $http.get("data/users.json")
+          .success(
+          function(response) {
+            callback(response);
+          }
+        );
+      }
     };
 
   });
+
+
+

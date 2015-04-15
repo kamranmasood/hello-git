@@ -11,7 +11,7 @@
   <h4>HTML5 Boilerplate</h4>
 
   <ul ng-repeat="student in students">
-    <li>Name: {{student.name}}, Age: {{student.age}}, Behavior: {{student.behavior}}</li>
+    <li>Name: {{student.name}}, Age: {{student.age}}, Behavior: {{student.behavior}}, Books: <span ng-repeat="book in student.books"><span ng-repeat="(key, val) in book">{{val}}, </span></span></li>
   </ul>
 
 </div>

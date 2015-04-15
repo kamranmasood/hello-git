@@ -10,6 +10,10 @@
 angular.module('webAppApp')
   .controller('MainCtrl', function ($scope, users) {
 
-$scope.students = users.students;
+$scope.students = users.getUsers(function(response){
+  $scope.students = response.students;
+});
+
+
 
   });
